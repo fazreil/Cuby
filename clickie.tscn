@@ -1,0 +1,142 @@
+[gd_scene load_steps=7 format=3 uid="uid://3pd7p7olv6x0"]
+
+[ext_resource type="Script" path="res://clickie-staticbody.gd" id="1_jw8ik"]
+[ext_resource type="Script" path="res://Camera.gd" id="1_k3b8i"]
+[ext_resource type="Script" path="res://clickie-MeshInstance3D.gd" id="3_4k852"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lthsf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e7ogw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73l6y"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.30575)
+script = ExtResource("1_k3b8i")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+light_energy = 5.0
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="mr" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+script = ExtResource("1_jw8ik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/mr"]
+shape = SubResource("SphereShape3D_lthsf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/mr/CollisionShape3D"]
+mesh = SubResource("BoxMesh_e7ogw")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_73l6y")
+script = ExtResource("3_4k852")
+
+[node name="ml" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+script = ExtResource("1_jw8ik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/ml"]
+shape = SubResource("SphereShape3D_lthsf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/ml/CollisionShape3D"]
+mesh = SubResource("BoxMesh_e7ogw")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_73l6y")
+script = ExtResource("3_4k852")
+
+[node name="mm" type="StaticBody3D" parent="Node3D"]
+script = ExtResource("1_jw8ik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/mm"]
+shape = SubResource("SphereShape3D_lthsf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/mm/CollisionShape3D"]
+mesh = SubResource("BoxMesh_e7ogw")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_73l6y")
+script = ExtResource("3_4k852")
+
+[node name="tr" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+script = ExtResource("1_jw8ik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/tr"]
+shape = SubResource("SphereShape3D_lthsf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/tr/CollisionShape3D"]
+mesh = SubResource("BoxMesh_e7ogw")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_73l6y")
+script = ExtResource("3_4k852")
+
+[node name="tl" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+script = ExtResource("1_jw8ik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/tl"]
+shape = SubResource("SphereShape3D_lthsf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/tl/CollisionShape3D"]
+mesh = SubResource("BoxMesh_e7ogw")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_73l6y")
+script = ExtResource("3_4k852")
+
+[node name="tm" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_jw8ik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/tm"]
+shape = SubResource("SphereShape3D_lthsf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/tm/CollisionShape3D"]
+mesh = SubResource("BoxMesh_e7ogw")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_73l6y")
+script = ExtResource("3_4k852")
+
+[node name="br" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0)
+script = ExtResource("1_jw8ik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/br"]
+shape = SubResource("SphereShape3D_lthsf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/br/CollisionShape3D"]
+mesh = SubResource("BoxMesh_e7ogw")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_73l6y")
+script = ExtResource("3_4k852")
+
+[node name="bl" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 0)
+script = ExtResource("1_jw8ik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/bl"]
+shape = SubResource("SphereShape3D_lthsf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/bl/CollisionShape3D"]
+mesh = SubResource("BoxMesh_e7ogw")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_73l6y")
+script = ExtResource("3_4k852")
+
+[node name="bm" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+script = ExtResource("1_jw8ik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/bm"]
+shape = SubResource("SphereShape3D_lthsf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/bm/CollisionShape3D"]
+mesh = SubResource("BoxMesh_e7ogw")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_73l6y")
+script = ExtResource("3_4k852")
+
+[connection signal="mouse_entered" from="Node3D/bm" to="Node3D/bm/CollisionShape3D/MeshInstance3D" method="changeColorToBlue"]
+[connection signal="mouse_exited" from="Node3D/bm" to="Node3D/bm/CollisionShape3D/MeshInstance3D" method="changeColorToRed"]

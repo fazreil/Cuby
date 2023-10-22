@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cuby"
-run/main_scene="res://start.tscn"
+run/main_scene="res://clickie.tscn"
 config/features=PackedStringArray("4.1")
 config/icon="res://icon.png"
 
