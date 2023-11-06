@@ -1,6 +1,5 @@
 extends StaticBody3D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -8,8 +7,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if(checkforbooking()):
+		print("game over")
 	pass
 
+func checkforbooking():
+	updateBooking()
+	
+func updateBooking():
+	pass
+	
 #func _mouse_enter():
 #	var material: StandardMaterial3D
 #	material = StandardMaterial3D.new()
